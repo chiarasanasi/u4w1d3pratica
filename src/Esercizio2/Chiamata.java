@@ -1,17 +1,31 @@
 package Esercizio2;
 
 public class Chiamata {
-    private final int numeroChiamato;
-    private final double durata;
+    private  String numeroChiamato;
+    private  double durata;
 
-    public Chiamata(int numeroChiamato, double durata) {
+    public Chiamata(String numeroChiamato, double durata) {
         this.numeroChiamato = numeroChiamato;
         this.durata = durata;
     }
 
+    public String getNumeroChiamato() {
+        return numeroChiamato;
+    }
+
+    public void setNumeroChiamato(String numeroChiamato) {
+        this.numeroChiamato = numeroChiamato;
+    }
+
+    public double getDurata() {
+        return durata;
+    }
+
+    public void setDurata(double durata) {
+        this.durata = durata;
+    }
 
     public void stampaChiamata(){
-        System.out.println("Numero Chiamato : " + numeroChiamato);
-        System.out.println("Durata Chiamata : " + durata);
+        System.out.println("Numero Chiamato : " + numeroChiamato + ", Durata Chiamata : " + durata);
     }
 }

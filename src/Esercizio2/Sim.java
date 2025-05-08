@@ -1,13 +1,33 @@
 package Esercizio2;
 
 public class Sim {
-    private final int numeroDiTelefono;
-    private final String creditoDisponibile;
+    private  String numeroDiTelefono;
+    private  double creditoDisponibile;
     private Chiamata[] chiamate;
 
-    public Sim(int numeroDiTelefono, String creditoDisponibile) {
-        this.creditoDisponibile = creditoDisponibile;
+    //costruttore
+    public Sim(String numeroDiTelefono) {
         this.numeroDiTelefono = numeroDiTelefono;
+    }
+
+    public String getNumeroDiTelefono() {
+        return numeroDiTelefono;
+    }
+
+    public void setNumeroDiTelefono(String numeroDiTelefono) {
+        this.numeroDiTelefono = numeroDiTelefono;
+    }
+
+    public double getCreditoDisponibile() {
+        return creditoDisponibile;
+    }
+
+    public void setCreditoDisponibile(double creditoDisponibile) {
+        this.creditoDisponibile = creditoDisponibile;
+    }
+
+    public Chiamata[] getChiamate() {
+        return chiamate;
     }
 
     public void setChiamate(Chiamata[] chiamate) {
@@ -19,7 +39,7 @@ public class Sim {
         System.out.println("Il mio credito : " + creditoDisponibile);
         System.out.println("Ultime chiamate : ");
         for (int i = 1; i < chiamate.length; i++) {
-            System.out.println("Chiamata numero " + i);
+            System.out.println("Chiamata n. " + i);
             chiamate[i].stampaChiamata();
         }
     }

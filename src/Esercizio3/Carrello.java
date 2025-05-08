@@ -3,30 +3,42 @@ package Esercizio3;
 public class Carrello {
     private Cliente cliente;
     private Articolo[] elencoArticoli;
+    private double totaleCosto;
+
 
 //costruttore
     public Carrello(Cliente cliente, Articolo[] elencoArticoli) {
         this.cliente = cliente;
         this.elencoArticoli = elencoArticoli;
+        calcoloTotale();
     }
 
-    private double totaleCosto(){
-        double totale = 0;
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public double getTotaleCosto() {
+        return totaleCosto;
+    }
+
+
+    public Articolo[] getElencoArticoli() {
+        return elencoArticoli;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setElencoArticoli(Articolo[] elencoArticoli) {
+        this.elencoArticoli = elencoArticoli;
+        calcoloTotale();
+    }
+
+    private void calcoloTotale(){
         for (int i = 0; i < elencoArticoli.length; i++) {
-            totale += elencoArticoli[i].getPrezzo();
+            totaleCosto = totaleCosto + elencoArticoli[i].getPrezzo();
         }
-        return totale;
     }
-
-
-    public void stampaCarrello() {
-        System.out.println("Cliente: " + cliente.toString());
-        System.out.println("Articoli nel carrello:");
-        for (int i = 0; i < elencoArticoli.length; i++) {
-            System.out.println("- " + elencoArticoli[i]);
-        }
-        System.out.println("Totale: €" + totaleCosto());
-    }
-
 
 }
